@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  airflow_tutorial:
+    image: airflow-tutorial:latest
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone
+  my_smtp:
+    image: ixdotai/smtp
+    restart: always
